@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Homebrew", "Cake.Homebrew\Cake.Homebrew.csproj", "{BCB038D3-B183-4343-BD05-5DF0B50B8B40}"
 EndProject
@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BEA195DC-883
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AC39707E-AC1F-4A75-A1C2-2EA47BD44CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Homebrew.Tests", "Cake.Homebrew.Tests\Cake.Homebrew.Tests.csproj", "{DEFDA079-6011-47E2-9D3E-626177F6BACC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Homebrew.Tests", "Cake.Homebrew.Tests\Cake.Homebrew.Tests.csproj", "{DEFDA079-6011-47E2-9D3E-626177F6BACC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{E639D12C-5C73-415D-8D24-071D1321FA05}"
 	ProjectSection(SolutionItems) = preProject
@@ -19,6 +19,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{E639D12C
 		..\build.sh = ..\build.sh
 		..\GitVersion.yml = ..\GitVersion.yml
 		..\recipe.cake = ..\recipe.cake
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{42C569CF-6288-4C1A-B21A-F042893316C1}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE.md = ..\LICENSE.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Global

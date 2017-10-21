@@ -3,11 +3,11 @@
 Environment.SetVariableNames();
 
 BuildParameters.SetParameters(context: Context,
-                            title: "Cake.Environment.Module",
+                            title: "Cake.Homebrew",
                             buildSystem: BuildSystem,
                             sourceDirectoryPath: "./src",
                             repositoryOwner: "RLittlesII",
-                            repositoryName: "Cake.Environment.Module",
+                            repositoryName: "Cake.Homebrew",
                             appVeyorAccountName: "RLittlesII",
                             shouldRunInspectCode: false,
                             shouldRunDotNetCorePack: true,
