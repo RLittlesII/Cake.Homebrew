@@ -16,6 +16,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <DebugType>full</DebugType>
+    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.23.0" />
