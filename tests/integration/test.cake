@@ -3,6 +3,8 @@
 #load "./utilities/xunit.cake"
 
 // Tests
+#load "./Homebrew/install.cake"
+#load "./Homebrew/uninstall.cake"
 #load "./Homebrew/HomebrewAliases.cake"
 
 //////////////////////////////////////////////////
@@ -27,7 +29,8 @@ Teardown(ctx =>
 // TARGETS
 //////////////////////////////////////////////////
 Task("Cake.Homebrew")
-    .IsDependentOn("Homebrew-Install");
+    .IsDependentOn("Homebrew-Settings")
+    .IsDependentOn("Homebrew-Action");
 
 Task("Run-All-Tests")
     .IsDependentOn("Cake.Homebrew");

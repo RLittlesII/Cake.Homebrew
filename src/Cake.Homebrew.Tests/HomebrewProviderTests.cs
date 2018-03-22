@@ -12,41 +12,42 @@ namespace Cake.Homebrew.Tests
     {
         private static ICakeContext Context => Substitute.For<ICakeContext>();
 
-        public sealed class TheInstallMethod
+        public sealed class TheConstructor
         {
             [OSXFact]
-            public void Should_Throw_If_Context_Null()
+            public void Should_Throw_If_Context_Null_OSX()
             {
-                // Given
-                var provider = new HomebrewProvider(null);
-
-                // When
-                var result = Record.Exception(() => provider.Install(new HomebrewSettings()));
+                // Given, When
+                var result = Record.Exception(() =>
+                {
+                    var provider = new HomebrewProvider(null);
+                });
 
                 //Then
                 Assert.IsType<ArgumentNullException>(result);
-                Assert.Equal("Value cannot be null.\nParameter name: _context", result.Message);
+                Assert.Equal("Value cannot be null.\nParameter name: context", result.Message);
+            }
+
+            [WindowsFact]
+            public void Should_Throw_If_Context_Null_Windows()
+            {
+                // Given, When
+                var result = Record.Exception(() =>
+                {
+                    var provider = new HomebrewProvider(null);
+                });
+
+                //Then
+                Assert.IsType<ArgumentNullException>(result);
+                Assert.Equal("Value cannot be null.\r\nParameter name: context", result.Message);
             }
         }
 
         public sealed class TheInstallActionMethod
         {
-            [OSXFact]
-            public void Should_Throw_If_Context_Null()
-            {
-                // Given
-                var provider = new HomebrewProvider(null);
-
-                // When
-                var result = Record.Exception(() => provider.Install(new HomebrewSettings()));
-
-                //Then
-                Assert.IsType<ArgumentNullException>(result);
-                Assert.Equal("Value cannot be null.\nParameter name: _context", result.Message);
-            }
 
             [OSXFact]
-            public void Should_Throw_If_Configurator_Null()
+            public void Should_Throw_If_Configurator_Null_OSX()
             {
                 // Given
                 var provider = new HomebrewProvider(Context);
@@ -57,6 +58,51 @@ namespace Cake.Homebrew.Tests
                 //Then
                 Assert.IsType<ArgumentNullException>(result);
                 Assert.Equal("Value cannot be null.\nParameter name: configurator", result.Message);
+            }
+
+            [WindowsFact]
+            public void Should_Throw_If_Configurator_Null_Windows()
+            {
+                // Given
+                var provider = new HomebrewProvider(Context);
+
+                // When
+                var result = Record.Exception(() => provider.Install((Action<HomebrewSettings>)null));
+
+                //Then
+                Assert.IsType<ArgumentNullException>(result);
+                Assert.Equal("Value cannot be null.\r\nParameter name: configurator", result.Message);
+            }
+        }
+
+        public sealed class TheUninstallActionMethod
+        {
+            [OSXFact]
+            public void Should_Throw_If_Configurator_Null_OSX()
+            {
+                // Given
+                var provider = new HomebrewProvider(Context);
+
+                // When
+                var result = Record.Exception(() => provider.Uninstall((Action<HomebrewSettings>)null));
+
+                //Then
+                Assert.IsType<ArgumentNullException>(result);
+                Assert.Equal("Value cannot be null.\nParameter name: configurator", result.Message);
+            }
+
+            [WindowsFact]
+            public void Should_Throw_If_Configurator_Null_Windows()
+            {
+                // Given
+                var provider = new HomebrewProvider(Context);
+
+                // When
+                var result = Record.Exception(() => provider.Uninstall((Action<HomebrewSettings>)null));
+
+                //Then
+                Assert.IsType<ArgumentNullException>(result);
+                Assert.Equal("Value cannot be null.\r\nParameter name: configurator", result.Message);
             }
         }
     }

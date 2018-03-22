@@ -10,6 +10,7 @@ BuildParameters.SetParameters(context: Context,
                             repositoryName: "Cake.Homebrew",
                             appVeyorAccountName: "RLittlesII",
                             shouldRunInspectCode: false,
+                            shouldRunDupFinder: false,
                             shouldRunDotNetCorePack: true,
                             shouldRunCodecov: false,
                             integrationTestScriptPath: "./tests/integration/test.cake");

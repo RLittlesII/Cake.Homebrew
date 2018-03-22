@@ -36,5 +36,35 @@ namespace Cake.Homebrew
         /// </summary>
         /// <param name="configurator">The configurator.</param>
         void Install(Action<HomebrewSettings> configurator);
+
+        /// <summary>
+        /// Uninstalls the brew with the specified settings.
+        /// <example>
+        /// <code>
+        ///     var config = new HomebrewSettings
+        ///     {
+        ///         Formula = "cake"
+        ///     };
+        /// 
+        ///     Homebrew.Uninstall(config);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="settings"></param>
+        void Uninstall(HomebrewSettings settings);
+
+        /// <summary>
+        /// Uninstalls the brew with the specified action to generate settings.
+        /// <example>
+        /// <code>
+        ///     Homebrew.Uninstall(config =>
+        ///     {
+        ///         config.Formula = "cake";
+        ///     });
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="configurator"></param>
+        void Uninstall(Action<HomebrewSettings> configurator);
     }
 }
