@@ -7,7 +7,7 @@ Cake addin that extends Cake with support for Homebrew.
 | Build server                | Platform     | Dev    | Master             |
 |-----------------------------|--------------|--------------|---------------------------------------------------------------------------------------------------------------------------|
 | AppVeyor                    | Windows      |  [![Build status](https://ci.appveyor.com/api/projects/status/bvxpbhtyrhr88bfj/branch/dev?svg=true)](https://ci.appveyor.com/project/RLittlesII/cake-homebrew/branch/dev) | [![Build status](https://ci.appveyor.com/api/projects/status/bvxpbhtyrhr88bfj/branch/master?svg=true)](https://ci.appveyor.com/project/RLittlesII/cake-homebrew/branch/master) |
-| Travis                      | Linux / OS X | [![Build Status](https://travis-ci.org/RLittlesII/Cake.Homebrew.svg?branch=dev)](https://travis-ci.org/RLittlesII/Cake.Homebrew) | [![Build Status](https://travis-ci.org/RLittlesII/Cake.Homebrew.svg?branch=master)](https://travis-ci.org/RLittlesII/Cake.Homebrew) |
+| TravisCI                    | OS X | [![Build Status](https://api.travis-ci.org/RLittlesII/Cake.Homebrew.svg?branch=dev)](https://travis-ci.org/RLittlesII/Cake.Homebrew) | [![Build Status](https://api.travis-ci.org/RLittlesII/Cake.Homebrew.svg?branch=master)](https://travis-ci.org/RLittlesII/Cake.Homebrew) |
 
 ## Information
 | | Stable |
