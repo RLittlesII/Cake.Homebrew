@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using Cake.Core;
+using Cake.Core.Annotations;
 
 [assembly: InternalsVisibleTo("Cake.Homebrew.Tests")]
 
@@ -10,7 +11,8 @@ namespace Cake.Homebrew
     /// An instance of <see cref="IHomebrewProvider"/> that allows access to Homebrew methods.
     /// </summary>
     /// <seealso cref="IHomebrewProvider" />
-    public class HomebrewProvider : IHomebrewProvider
+    [CakeAliasCategory("Homebrew")]
+    public sealed class HomebrewProvider : IHomebrewProvider
     {
         private readonly HomebrewRunner _homewbrewRunner;
 
@@ -43,6 +45,7 @@ namespace Cake.Homebrew
         /// </example>
         /// </summary>
         /// <param name="settings">The settings.</param>
+        [CakeAliasCategory("Install")]
         public void Install(HomebrewSettings settings)
         {
             _homewbrewRunner.Run("install", settings ?? new HomebrewSettings());
@@ -61,6 +64,7 @@ namespace Cake.Homebrew
         /// </example>
         /// </summary>
         /// <param name="configurator">The configurator.</param>
+        [CakeAliasCategory("Install")]
         public void Install(Action<HomebrewSettings> configurator)
         {
             if (configurator == null)
@@ -90,6 +94,7 @@ namespace Cake.Homebrew
         /// </example>
         /// </summary>
         /// <param name="settings">The settings.</param>
+        [CakeAliasCategory("Uninstall")]
         public void Uninstall(HomebrewSettings settings)
         {
             _homewbrewRunner.Run("uninstall", settings ?? new HomebrewSettings());
@@ -108,6 +113,7 @@ namespace Cake.Homebrew
         /// </example>
         /// </summary>
         /// <param name="configurator">The configurator.</param>
+        [CakeAliasCategory("Uninstall")]
         public void Uninstall(Action<HomebrewSettings> configurator)
         {
             if (configurator == null)
