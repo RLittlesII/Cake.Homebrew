@@ -277,3 +277,4 @@ BuildArtifacts/
 
 # .NET Core
 .dotnet/
+**/.dotnet
