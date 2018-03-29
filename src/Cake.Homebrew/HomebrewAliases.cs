@@ -10,6 +10,14 @@ namespace Cake.Homebrew
 
         /// <summary>
         /// Returns a <see cref="HomebrewProvider" /> from the specified <see cref="ICakeContext"/>.
+        /// <example>
+        /// <code>
+        ///     Homebrew.Install(config =>
+        ///     {
+        ///         config.Formula = "cake";
+        ///     });
+        /// </code>
+        /// </example>
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns></returns>

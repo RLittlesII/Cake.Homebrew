@@ -45,6 +45,7 @@ namespace Cake.Homebrew
         /// </example>
         /// </summary>
         /// <param name="settings">The settings.</param>
+        [CakeMethodAlias]
         [CakeAliasCategory("Install")]
         public void Install(HomebrewSettings settings)
         {
@@ -64,6 +65,7 @@ namespace Cake.Homebrew
         /// </example>
         /// </summary>
         /// <param name="configurator">The configurator.</param>
+        [CakeMethodAlias]
         [CakeAliasCategory("Install")]
         public void Install(Action<HomebrewSettings> configurator)
         {
@@ -94,6 +96,7 @@ namespace Cake.Homebrew
         /// </example>
         /// </summary>
         /// <param name="settings">The settings.</param>
+        [CakeMethodAlias]
         [CakeAliasCategory("Uninstall")]
         public void Uninstall(HomebrewSettings settings)
         {
@@ -113,6 +116,7 @@ namespace Cake.Homebrew
         /// </example>
         /// </summary>
         /// <param name="configurator">The configurator.</param>
+        [CakeMethodAlias]
         [CakeAliasCategory("Uninstall")]
         public void Uninstall(Action<HomebrewSettings> configurator)
         {
@@ -126,6 +130,29 @@ namespace Cake.Homebrew
             configurator(settings);
 
             Uninstall(settings);
+        }
+
+        [CakeMethodAlias]
+        [CakeAliasCategory("Update")]
+        public void Update(HomebrewSettings settings)
+        {
+            _homewbrewRunner.Run("update", settings ?? new HomebrewSettings());
+        }
+
+        [CakeMethodAlias]
+        [CakeAliasCategory("Update")]
+        public void Update(Action<HomebrewSettings> configurator)
+        {
+            if (configurator == null)
+            {
+                throw new ArgumentNullException(nameof(configurator));
+            }
+
+            var settings = new HomebrewSettings();
+
+            configurator(settings);
+
+            Update(settings);
         }
     }
 }

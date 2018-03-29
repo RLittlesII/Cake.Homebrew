@@ -73,5 +73,10 @@ namespace Cake.Homebrew
         /// If passed, print the verification and postinstall steps.
         /// </summary>
         public bool Verbose { get; set; }
+
+        /// <summary>
+        /// If passed then git merge is used to include updates.
+        /// </summary>
+        public bool Merge { get; set; }
     }
 }

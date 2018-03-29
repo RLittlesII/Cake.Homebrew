@@ -123,6 +123,11 @@ namespace Cake.Homebrew
                 builder.Append("--verbose");
             }
 
+            if (settings.Merge)
+            {
+                builder.Append("--merge");
+            }
+
             return builder;
         }
 

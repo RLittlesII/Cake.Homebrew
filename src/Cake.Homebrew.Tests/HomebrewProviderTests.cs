@@ -105,5 +105,36 @@ namespace Cake.Homebrew.Tests
                 Assert.Equal("Value cannot be null.\r\nParameter name: configurator", result.Message);
             }
         }
+
+        public sealed class TheUpdateActionMethod
+        {
+            [OSXFact]
+            public void Should_Throw_If_Configurator_Null_OSX()
+            {
+                // Given
+                var provider = new HomebrewProvider(Context);
+
+                // When
+                var result = Record.Exception(() => provider.Update((Action<HomebrewSettings>)null));
+
+                //Then
+                Assert.IsType<ArgumentNullException>(result);
+                Assert.Equal("Value cannot be null.\nParameter name: configurator", result.Message);
+            }
+
+            [WindowsFact]
+            public void Should_Throw_If_Configurator_Null_Windows()
+            {
+                // Given
+                var provider = new HomebrewProvider(Context);
+
+                // When
+                var result = Record.Exception(() => provider.Update((Action<HomebrewSettings>)null));
+
+                //Then
+                Assert.IsType<ArgumentNullException>(result);
+                Assert.Equal("Value cannot be null.\r\nParameter name: configurator", result.Message);
+            }
+        }
     }
 }
