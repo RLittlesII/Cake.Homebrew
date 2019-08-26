@@ -13,7 +13,8 @@ BuildParameters.SetParameters(context: Context,
                             shouldRunDupFinder: false,
                             shouldRunDotNetCorePack: true,
                             shouldRunCodecov: false,
-                            integrationTestScriptPath: "./tests/integration/test.cake");
+                            integrationTestScriptPath: "./tests/integration/test.cake",
+                            shouldRunGitVersion: true);
 
 BuildParameters.PrintParameters(Context);
 

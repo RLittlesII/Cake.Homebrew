@@ -9,9 +9,10 @@
     <Company />
     <Description>Cake addin that provides Homebrew aliases</Description>
     <Copyright>Rodney Littles II</Copyright>
-    <PackageLicenseUrl>https://github.com/cake-contrib/Cake.Homebrew/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.Homebrew</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Homebrew.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageTags>cake;homebrew;</PackageTags>
   </PropertyGroup>
   <PropertyGroup>
